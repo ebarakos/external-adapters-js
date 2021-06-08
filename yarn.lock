@@ -3492,6 +3492,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chainlink/terra-adapter@workspace:packages/targets/terra":
+  version: 0.0.0-use.local
+  resolution: "@chainlink/terra-adapter@workspace:packages/targets/terra"
+  dependencies:
+    "@chainlink/ea-bootstrap": "*"
+    "@chainlink/ea-test-helpers": "*"
+    "@chainlink/types": 0.0.1
+    "@terra-money/terra.js": bombay
+    "@types/jest": ^26.0.22
+    "@types/node": ^14.14.35
+    tslib: ^2.1.0
+    typescript: ^4.2.3
+  languageName: unknown
+  linkType: soft
+
 "@chainlink/therundown-adapter@*, @chainlink/therundown-adapter@^0.0.2, @chainlink/therundown-adapter@workspace:packages/sources/therundown":
   version: 0.0.0-use.local
   resolution: "@chainlink/therundown-adapter@workspace:packages/sources/therundown"
@@ -6735,6 +6750,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@terra-money/terra.js@npm:bombay":
+  version: 2.0.0-beta.8
+  resolution: "@terra-money/terra.js@npm:2.0.0-beta.8"
+  dependencies:
+    axios: ^0.21.1
+    bech32: ^2.0.0
+    bip32: ^2.0.6
+    bip39: ^3.0.3
+    bufferutil: ^4.0.1
+    crypto-js: 3.3.0
+    decimal.js: ^10.2.1
+    readable-stream: ^3.6.0
+    secp256k1: ^4.0.2
+    tmp: ^0.2.1
+    utf-8-validate: ^5.0.2
+    ws: ^7.4.2
+  checksum: 6e9cdecbda40a6c4431b7e21fc20dba673f6d27c0e66cac9a7d78a74a599680c350c6c154931880358cb2f2fd9f74a18a448f353498e7706542a92868d883987
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:1":
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
@@ -8675,6 +8710,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bech32@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "bech32@npm:2.0.0"
+  checksum: 0d68c58f528cb7fb5289d834ad50388eb30f9d8288ae7292ea1c9eaa4dd5364a974ad01ba443f2744590b3f6d662c427daf36bd6378b267bf6109d5b91458ef0
+  languageName: node
+  linkType: hard
+
 "before-after-hook@npm:^2.2.0":
   version: 2.2.1
   resolution: "before-after-hook@npm:2.2.1"
@@ -8761,7 +8803,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bip32@npm:^2.0.4":
+"bip32@npm:^2.0.4, bip32@npm:^2.0.6":
   version: 2.0.6
   resolution: "bip32@npm:2.0.6"
   dependencies:
@@ -8798,6 +8840,18 @@ __metadata:
     pbkdf2: ^3.0.9
     randombytes: ^2.0.1
   checksum: 948443cd3713921ea1a5a5d15b52cd62280d0c30fc4a5cee3df261567808cde5e11622c0d34bccee8fadefdffa7db4244682a5567be6b9f70e195948b9d23bf8
+  languageName: node
+  linkType: hard
+
+"bip39@npm:^3.0.3":
+  version: 3.0.4
+  resolution: "bip39@npm:3.0.4"
+  dependencies:
+    "@types/node": 11.11.6
+    create-hash: ^1.1.0
+    pbkdf2: ^3.0.9
+    randombytes: ^2.0.1
+  checksum: 24359ef61f68a1abf6c6662aa49561673a42ffa024cab02eacd5e35fd09f999b3ef60d43ad89271fa193a23d88340c95d40894792c8e22439bd3b82f5e9905c4
   languageName: node
   linkType: hard
 
@@ -10444,7 +10498,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crypto-js@npm:^3.1.9-1":
+"crypto-js@npm:3.3.0, crypto-js@npm:^3.1.9-1":
   version: 3.3.0
   resolution: "crypto-js@npm:3.3.0"
   checksum: 7cf8de489f9f25084a3b22cc6e944e2e11e03b6374777a7a554739ee27e3b35d5dfdac490e0a66bc191c9ecbbea13ad716f59345657335b39d95f9bc19c40ac5
@@ -19589,7 +19643,7 @@ resolve@1.17.0:
   languageName: node
   linkType: hard
 
-"secp256k1@npm:^4.0.1":
+"secp256k1@npm:^4.0.1, secp256k1@npm:^4.0.2":
   version: 4.0.2
   resolution: "secp256k1@npm:4.0.2"
   dependencies:
@@ -21011,6 +21065,15 @@ resolve@1.17.0:
   dependencies:
     os-tmpdir: ~1.0.2
   checksum: 77666ca424a78fcfcc27a6576f24f01aa1300b10d22e4f1808809e560777672dd2d4a112604ab2ad86ec7cafd24472b9ccc41373c2b5b83797f27e6aff06cbe5
+  languageName: node
+  linkType: hard
+
+"tmp@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "tmp@npm:0.2.1"
+  dependencies:
+    rimraf: ^3.0.0
+  checksum: 13973825ff1c7aed3359bba97c146c860ebb5b1cbdca88387a2ff8bae704d2478b701cc3adc29b1461be292fed1e4ae56b378b6a0386bbab471ef32860e0a711
   languageName: node
   linkType: hard
 
@@ -23077,6 +23140,21 @@ typescript@^4.2.3:
     utf-8-validate:
       optional: true
   checksum: ad08761ed753cdd3f7172e9a9efc7d74e7e196623cace2380e5f74ff0abd16196e03223bd4148a34278dcbc653ee3841994635419281cbf303b3f22c589e2ec4
+  languageName: node
+  linkType: hard
+
+"ws@npm:^7.4.2":
+  version: 7.4.6
+  resolution: "ws@npm:7.4.6"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: ffeb626d92f14aa3a67aa3784824c1d290131e25d225f4ca6b1b6b6d7ea754fca67694d89a5b99b144382365e1bccf1f7ec2f92df56f0d25f44939b070452f06
   languageName: node
   linkType: hard
 

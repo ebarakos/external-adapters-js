@@ -331,6 +331,9 @@
     },
     {
       "path": "./targets/harmony"
+    },
+    {
+      "path": "./targets/terra"
     }
   ]
 }
