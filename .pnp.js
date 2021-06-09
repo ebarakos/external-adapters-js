@@ -469,6 +469,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "@chainlink/harmony-adapter",
         "reference": "workspace:packages/targets/harmony"
+      },
+      {
+        "name": "@chainlink/terra-adapter",
+        "reference": "workspace:packages/targets/terra"
       }
     ],
     "enableTopLevelFallback": true,
@@ -574,6 +578,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@chainlink/stasis-adapter", ["workspace:packages/sources/stasis"]],
       ["@chainlink/synth-index-adapter", ["workspace:packages/composites/synth-index"]],
       ["@chainlink/taapi-adapter", ["workspace:packages/sources/taapi"]],
+      ["@chainlink/terra-adapter", ["workspace:packages/targets/terra"]],
       ["@chainlink/therundown-adapter", ["workspace:packages/sources/therundown"]],
       ["@chainlink/tiingo-adapter", ["workspace:packages/sources/tiingo"]],
       ["@chainlink/token-allocation-adapter", ["workspace:packages/composites/token-allocation"]],
@@ -6207,6 +6212,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
+      ["@chainlink/terra-adapter", [
+        ["workspace:packages/targets/terra", {
+          "packageLocation": "./packages/targets/terra/",
+          "packageDependencies": [
+            ["@chainlink/terra-adapter", "workspace:packages/targets/terra"],
+            ["@chainlink/ea-bootstrap", "workspace:packages/core/bootstrap"],
+            ["@chainlink/ea-test-helpers", "workspace:packages/core/test-helpers"],
+            ["@chainlink/types", "workspace:packages/core/types/@chainlink"],
+            ["@terra-money/terra.js", "npm:2.0.0-beta.8"],
+            ["@types/jest", "npm:26.0.22"],
+            ["@types/node", "npm:14.14.41"],
+            ["tslib", "npm:2.2.0"],
+            ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@chainlink/therundown-adapter", [
         ["workspace:packages/sources/therundown", {
           "packageLocation": "./packages/sources/therundown/",
@@ -9688,6 +9710,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@terra-money/terra.js", [
+        ["npm:2.0.0-beta.8", {
+          "packageLocation": "./.yarn/cache/@terra-money-terra.js-npm-2.0.0-beta.8-0f767feaf5-6e9cdecbda.zip/node_modules/@terra-money/terra.js/",
+          "packageDependencies": [
+            ["@terra-money/terra.js", "npm:2.0.0-beta.8"],
+            ["axios", "npm:0.21.1"],
+            ["bech32", "npm:2.0.0"],
+            ["bip32", "npm:2.0.6"],
+            ["bip39", "npm:3.0.4"],
+            ["bufferutil", "npm:4.0.3"],
+            ["crypto-js", "npm:3.3.0"],
+            ["decimal.js", "npm:10.2.1"],
+            ["readable-stream", "npm:3.6.0"],
+            ["secp256k1", "npm:4.0.2"],
+            ["tmp", "npm:0.2.1"],
+            ["utf-8-validate", "npm:5.0.4"],
+            ["ws", "virtual:0f767feaf505ec77c8d180a5108b7f638b06aea99d68b5f3a99b26cbcaa31cd470854d465dbbc935a93d068c34e2c61e3f5c00bc89a8bc08f22dc66ac061436e#npm:7.4.6"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@tootallnate/once", [
         ["npm:1.1.2", {
           "packageLocation": "./.yarn/cache/@tootallnate-once-npm-1.1.2-0517220057-d030f3fb14.zip/node_modules/@tootallnate/once/",
@@ -12112,6 +12155,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bech32", "npm:1.1.4"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/bech32-npm-2.0.0-ad98b7dd79-0d68c58f52.zip/node_modules/bech32/",
+          "packageDependencies": [
+            ["bech32", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["before-after-hook", [
@@ -12251,6 +12301,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/bip39-npm-3.0.3-75d672a562-948443cd37.zip/node_modules/bip39/",
           "packageDependencies": [
             ["bip39", "npm:3.0.3"],
+            ["@types/node", "npm:11.11.6"],
+            ["create-hash", "npm:1.2.0"],
+            ["pbkdf2", "npm:3.1.2"],
+            ["randombytes", "npm:2.1.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:3.0.4", {
+          "packageLocation": "./.yarn/cache/bip39-npm-3.0.4-7c69c9182f-24359ef61f.zip/node_modules/bip39/",
+          "packageDependencies": [
+            ["bip39", "npm:3.0.4"],
             ["@types/node", "npm:11.11.6"],
             ["create-hash", "npm:1.2.0"],
             ["pbkdf2", "npm:3.1.2"],
@@ -25771,6 +25832,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["os-tmpdir", "npm:1.0.2"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:0.2.1", {
+          "packageLocation": "./.yarn/cache/tmp-npm-0.2.1-a9c8d9c0ca-13973825ff.zip/node_modules/tmp/",
+          "packageDependencies": [
+            ["tmp", "npm:0.2.1"],
+            ["rimraf", "npm:3.0.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["tmpl", [
@@ -27963,6 +28032,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ws", "npm:7.4.4"]
           ],
           "linkType": "SOFT",
+        }],
+        ["npm:7.4.6", {
+          "packageLocation": "./.yarn/cache/ws-npm-7.4.6-9c9a725604-ffeb626d92.zip/node_modules/ws/",
+          "packageDependencies": [
+            ["ws", "npm:7.4.6"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:0f767feaf505ec77c8d180a5108b7f638b06aea99d68b5f3a99b26cbcaa31cd470854d465dbbc935a93d068c34e2c61e3f5c00bc89a8bc08f22dc66ac061436e#npm:7.4.6", {
+          "packageLocation": "./.yarn/$$virtual/ws-virtual-035b5fa9fc/0/cache/ws-npm-7.4.6-9c9a725604-ffeb626d92.zip/node_modules/ws/",
+          "packageDependencies": [
+            ["ws", "virtual:0f767feaf505ec77c8d180a5108b7f638b06aea99d68b5f3a99b26cbcaa31cd470854d465dbbc935a93d068c34e2c61e3f5c00bc89a8bc08f22dc66ac061436e#npm:7.4.6"],
+            ["@types/bufferutil", null],
+            ["@types/utf-8-validate", null],
+            ["bufferutil", "npm:4.0.3"],
+            ["utf-8-validate", "npm:5.0.4"]
+          ],
+          "packagePeers": [
+            "@types/bufferutil",
+            "@types/utf-8-validate",
+            "bufferutil",
+            "utf-8-validate"
+          ],
+          "linkType": "HARD",
         }],
         ["virtual:0fd7ab4db5b1d3999b8c6b73a3759e324c2d493248ce759e747097b0395d109031ca6c4caa8a1e24b6c5e7bd559c7176d245fbd42a849f70098b60b12aa2ad41#npm:7.2.3", {
           "packageLocation": "./.yarn/$$virtual/ws-virtual-45de33831c/0/cache/ws-npm-7.2.3-e2147dfc25-fedf178c29.zip/node_modules/ws/",
