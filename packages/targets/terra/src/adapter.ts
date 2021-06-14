@@ -1,7 +1,7 @@
 import { Requester, Validator, AdapterError } from '@chainlink/ea-bootstrap'
 import { ExecuteWithConfig, ExecuteFactory } from '@chainlink/types'
 import { makeConfig, DEFAULT_ENDPOINT, Config } from './config'
-import { txsend } from './endpoint'
+import { fluxMonitor, txsend } from './endpoint'
 
 const inputParams = {
   endpoint: false,
@@ -19,6 +19,9 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
   switch (endpoint.toLowerCase()) {
     case txsend.NAME: {
       return await txsend.execute(request, config)
+    }
+    case fluxMonitor.NAME: {
+      return await fluxMonitor.execute(request, config)
     }
     default: {
       throw new AdapterError({
