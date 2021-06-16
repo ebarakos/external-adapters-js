@@ -19,7 +19,7 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
   const msg = validator.validated.data.msg
 
   const terra = new LCDClient({
-    URL: config.rpcUrl,
+    URL: config.fcdUrl,
     chainID: config.chainId,
     gasPrices: { uluna: config.gasPrices || DEFAULT_GAS_PRICES },
   })

@@ -6,7 +6,7 @@ This adapter interacts with Chainlink contracts on Terra.
 
 | Required? |    Name    |              Description               | Options | Defaults to |
 | :-------: | :--------: | :------------------------------------: | :-----: | :---------: |
-|    ✅     |  RPC_URL   | URL to RPC endpoint of the Terra chain |         |             |
+|    ✅     |  FCD_URL   | URL to FCD endpoint of the Terra chain |         |             |
 |    ✅     |  CHAIN_ID  |             Terra chain ID             |         |             |
 |    ✅     |  MNEMONIC  |      Mnemonic key used to send tx      |         |             |
 |           | GAS_PRICES |         Set target gas prices          |         |   100000    |
