@@ -25,7 +25,8 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
   const jobRunID = validator.validated.id
   const address = validator.validated.data.address
   const roundId = validator.validated.data.roundId
-  const result = validator.validated.data.result
+  // TODO: temporary hack; multiply by precision either by sending it from the EI or fetching from the contract
+  const result = (Number.parseFloat(validator.validated.data.result) * 1e3).toString()
 
   const terra = new LCDClient({
     URL: config.fcdUrl,
