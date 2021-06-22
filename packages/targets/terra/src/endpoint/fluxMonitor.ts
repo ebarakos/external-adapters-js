@@ -32,6 +32,7 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
     URL: config.fcdUrl,
     chainID: config.chainId,
     gasPrices: { uluna: config.gasPrices || DEFAULT_GAS_PRICES },
+    gasAdjustment: 1.5
   })
 
   const wallet = terra.wallet(new MnemonicKey({ mnemonic: config.mnemonic }))
@@ -63,6 +64,7 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
       true,
     )
   } catch (error) {
+    console.log(error)
     throw new AdapterError({
       jobRunID,
       message: error.toString(),

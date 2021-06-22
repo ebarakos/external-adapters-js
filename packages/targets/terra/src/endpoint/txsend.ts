@@ -47,6 +47,7 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
       true,
     )
   } catch (error) {
+    console.log(error)
     throw new AdapterError({
       jobRunID,
       message: error.toString(),
