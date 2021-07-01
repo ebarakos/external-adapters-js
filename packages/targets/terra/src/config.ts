@@ -4,7 +4,7 @@ import { Config as DefaultConfig } from '@chainlink/types'
 export const NAME = 'terra'
 
 export const DEFAULT_ENDPOINT = 'txsend'
-export const DEFAULT_GAS_PRICES = 100000000
+export const DEFAULT_GAS_PRICES = 0.5
 
 export type Config = DefaultConfig & {
   fcdUrl: string

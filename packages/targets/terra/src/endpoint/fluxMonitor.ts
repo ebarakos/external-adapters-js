@@ -2,13 +2,8 @@ import { Requester, Validator, AdapterError } from '@chainlink/ea-bootstrap'
 import { ExecuteWithConfig } from '@chainlink/types'
 import { LCDClient, MnemonicKey, MsgExecuteContract, isTxError } from '@terra-money/terra.js'
 import { Config, DEFAULT_GAS_PRICES } from '../config'
-
-interface SubmitMsg {
-  submit: {
-    round_id: string
-    submission: string
-  }
-}
+import { ConfigResponse } from '../models/configResponse'
+import { SubmitMsg } from '../models/submitMsg'
 
 export const NAME = 'fluxmonitor'
 
@@ -25,22 +20,27 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
   const jobRunID = validator.validated.id
   const address = validator.validated.data.address
   const roundId = validator.validated.data.roundId
-  // TODO: temporary hack; multiply by precision either by sending it from the EI or fetching from the contract
-  const result = (Number.parseFloat(validator.validated.data.result) * 1e3).toString()
+  const decimalResult = Number.parseFloat(validator.validated.data.result)
 
   const terra = new LCDClient({
     URL: config.fcdUrl,
     chainID: config.chainId,
     gasPrices: { uluna: config.gasPrices || DEFAULT_GAS_PRICES },
-    gasAdjustment: 1.5
+    gasAdjustment: 2,
   })
+
+  const aggregatorConfig = await terra.wasm.contractQuery<ConfigResponse>(address, {
+    get_aggregator_config: {},
+  })
+
+  const result = decimalResult * 10 ** aggregatorConfig.decimals
 
   const wallet = terra.wallet(new MnemonicKey({ mnemonic: config.mnemonic }))
 
   const submitMsg: SubmitMsg = {
     submit: {
       round_id: roundId,
-      submission: result,
+      submission: result.toString(),
     },
   }
   const execMsg = new MsgExecuteContract(wallet.key.accAddress, address, submitMsg)
@@ -67,7 +67,7 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
     console.log(error)
     throw new AdapterError({
       jobRunID,
-      message: error.toString(),
+      message: error,
       statusCode: 400,
     })
   }
