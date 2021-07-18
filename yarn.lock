@@ -3499,7 +3499,7 @@ __metadata:
     "@chainlink/ea-bootstrap": "*"
     "@chainlink/ea-test-helpers": "*"
     "@chainlink/types": 0.0.1
-    "@terra-money/terra.js": bombay
+    "@terra-money/terra.js": ^2.0.0-beta.15
     "@types/jest": ^26.0.22
     "@types/node": ^14.14.35
     tslib: ^2.1.0
@@ -6750,23 +6750,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terra-money/terra.js@npm:bombay":
-  version: 2.0.0-beta.8
-  resolution: "@terra-money/terra.js@npm:2.0.0-beta.8"
+"@terra-money/terra.js@npm:^2.0.0-beta.15":
+  version: 2.0.0-beta.15
+  resolution: "@terra-money/terra.js@npm:2.0.0-beta.15"
   dependencies:
     axios: ^0.21.1
     bech32: ^2.0.0
     bip32: ^2.0.6
     bip39: ^3.0.3
-    bufferutil: ^4.0.1
-    crypto-js: 3.3.0
+    bufferutil: ^4.0.3
     decimal.js: ^10.2.1
+    jscrypto: ^1.0.1
     readable-stream: ^3.6.0
     secp256k1: ^4.0.2
     tmp: ^0.2.1
-    utf-8-validate: ^5.0.2
+    utf-8-validate: ^5.0.5
     ws: ^7.4.2
-  checksum: 6e9cdecbda40a6c4431b7e21fc20dba673f6d27c0e66cac9a7d78a74a599680c350c6c154931880358cb2f2fd9f74a18a448f353498e7706542a92868d883987
+  checksum: 0f819d895b338838f70fe8859ba2e12fd42a3daaa5b932924890e8dee042e96a635fc53129594d0f3f0eaab77188db3b387fa2a97d8ea5006072cce6b4da6776
   languageName: node
   linkType: hard
 
@@ -9377,7 +9377,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bufferutil@npm:^4.0.1":
+"bufferutil@npm:^4.0.1, bufferutil@npm:^4.0.3":
   version: 4.0.3
   resolution: "bufferutil@npm:4.0.3"
   dependencies:
@@ -10498,7 +10498,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crypto-js@npm:3.3.0, crypto-js@npm:^3.1.9-1":
+"crypto-js@npm:^3.1.9-1":
   version: 3.3.0
   resolution: "crypto-js@npm:3.3.0"
   checksum: 7cf8de489f9f25084a3b22cc6e944e2e11e03b6374777a7a554739ee27e3b35d5dfdac490e0a66bc191c9ecbbea13ad716f59345657335b39d95f9bc19c40ac5
@@ -15371,6 +15371,15 @@ fsevents@~2.1.1:
   version: 0.1.1
   resolution: "jsbn@npm:0.1.1"
   checksum: b530d48a64e6aff9523407856a54c5b9beee30f34a410612057f4fa097d90072fc8403c49604dacf0c3e7620dca43c2b7f0de3f954af611e43716a254c46f6f5
+  languageName: node
+  linkType: hard
+
+"jscrypto@npm:^1.0.1":
+  version: 1.0.2
+  resolution: "jscrypto@npm:1.0.2"
+  bin:
+    jscrypto: bin/cli.js
+  checksum: 251946e9e6348ca9800e16ff3d3b718410bcbc02ebecd9fa61daeea94fdc5a5d99059c18f3cd2ab413b2c86ac9326c9b1d0b2d02c4eda5c789b9748afa17e5ef
   languageName: node
   linkType: hard
 
@@ -21702,6 +21711,16 @@ typescript@^4.2.3:
     node-gyp: latest
     node-gyp-build: ^4.2.0
   checksum: 14dc9e6af0471436a419505205d2d46a9e89109fe88b0920abe58323029ef260a454b9e27ce5a6700b40c15f182bb139f0bd3eb7c58e318b92eaf4d522be04af
+  languageName: node
+  linkType: hard
+
+"utf-8-validate@npm:^5.0.5":
+  version: 5.0.5
+  resolution: "utf-8-validate@npm:5.0.5"
+  dependencies:
+    node-gyp: latest
+    node-gyp-build: ^4.2.0
+  checksum: 020dacd9ac655ea114810f6025347bfbf48656ec4b363da6029779274d7f2b0f829717acb7f35dd4bf59ec12c62ace18fa213997ecbd5f43388684331fc862b0
   languageName: node
   linkType: hard
 

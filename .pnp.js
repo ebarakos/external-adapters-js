@@ -6220,7 +6220,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@chainlink/ea-bootstrap", "workspace:packages/core/bootstrap"],
             ["@chainlink/ea-test-helpers", "workspace:packages/core/test-helpers"],
             ["@chainlink/types", "workspace:packages/core/types/@chainlink"],
-            ["@terra-money/terra.js", "npm:2.0.0-beta.8"],
+            ["@terra-money/terra.js", "npm:2.0.0-beta.15"],
             ["@types/jest", "npm:26.0.22"],
             ["@types/node", "npm:14.14.41"],
             ["tslib", "npm:2.2.0"],
@@ -9711,22 +9711,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@terra-money/terra.js", [
-        ["npm:2.0.0-beta.8", {
-          "packageLocation": "./.yarn/cache/@terra-money-terra.js-npm-2.0.0-beta.8-0f767feaf5-6e9cdecbda.zip/node_modules/@terra-money/terra.js/",
+        ["npm:2.0.0-beta.15", {
+          "packageLocation": "./.yarn/cache/@terra-money-terra.js-npm-2.0.0-beta.15-f1c4526f43-0f819d895b.zip/node_modules/@terra-money/terra.js/",
           "packageDependencies": [
-            ["@terra-money/terra.js", "npm:2.0.0-beta.8"],
+            ["@terra-money/terra.js", "npm:2.0.0-beta.15"],
             ["axios", "npm:0.21.1"],
             ["bech32", "npm:2.0.0"],
             ["bip32", "npm:2.0.6"],
             ["bip39", "npm:3.0.4"],
             ["bufferutil", "npm:4.0.3"],
-            ["crypto-js", "npm:3.3.0"],
             ["decimal.js", "npm:10.2.1"],
+            ["jscrypto", "npm:1.0.2"],
             ["readable-stream", "npm:3.6.0"],
             ["secp256k1", "npm:4.0.2"],
             ["tmp", "npm:0.2.1"],
-            ["utf-8-validate", "npm:5.0.4"],
-            ["ws", "virtual:0f767feaf505ec77c8d180a5108b7f638b06aea99d68b5f3a99b26cbcaa31cd470854d465dbbc935a93d068c34e2c61e3f5c00bc89a8bc08f22dc66ac061436e#npm:7.4.6"]
+            ["utf-8-validate", "npm:5.0.5"],
+            ["ws", "virtual:f1c4526f43dab534fa5779db7e4a2ec459eaef0b1e6cded1eb47b28a8c654fa94a2bf5d6b775a137e838439cc7316d5b2b244045eccdf3bf4d5a7525efa908d7#npm:7.4.6"]
           ],
           "linkType": "HARD",
         }]
@@ -19489,6 +19489,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["jscrypto", [
+        ["npm:1.0.2", {
+          "packageLocation": "./.yarn/cache/jscrypto-npm-1.0.2-7a506d0458-251946e9e6.zip/node_modules/jscrypto/",
+          "packageDependencies": [
+            ["jscrypto", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["jsdom", [
         ["npm:16.5.3", {
           "packageLocation": "./.yarn/cache/jsdom-npm-16.5.3-a7674d3b6b-02f6e3b5bb.zip/node_modules/jsdom/",
@@ -26572,6 +26581,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["node-gyp-build", "npm:4.2.3"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:5.0.5", {
+          "packageLocation": "./.yarn/unplugged/utf-8-validate-npm-5.0.5-bbc4862e02/node_modules/utf-8-validate/",
+          "packageDependencies": [
+            ["utf-8-validate", "npm:5.0.5"],
+            ["node-gyp", "npm:8.0.0"],
+            ["node-gyp-build", "npm:4.2.3"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["utf8", [
@@ -28040,23 +28058,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:0f767feaf505ec77c8d180a5108b7f638b06aea99d68b5f3a99b26cbcaa31cd470854d465dbbc935a93d068c34e2c61e3f5c00bc89a8bc08f22dc66ac061436e#npm:7.4.6", {
-          "packageLocation": "./.yarn/$$virtual/ws-virtual-035b5fa9fc/0/cache/ws-npm-7.4.6-9c9a725604-ffeb626d92.zip/node_modules/ws/",
-          "packageDependencies": [
-            ["ws", "virtual:0f767feaf505ec77c8d180a5108b7f638b06aea99d68b5f3a99b26cbcaa31cd470854d465dbbc935a93d068c34e2c61e3f5c00bc89a8bc08f22dc66ac061436e#npm:7.4.6"],
-            ["@types/bufferutil", null],
-            ["@types/utf-8-validate", null],
-            ["bufferutil", "npm:4.0.3"],
-            ["utf-8-validate", "npm:5.0.4"]
-          ],
-          "packagePeers": [
-            "@types/bufferutil",
-            "@types/utf-8-validate",
-            "bufferutil",
-            "utf-8-validate"
-          ],
-          "linkType": "HARD",
-        }],
         ["virtual:0fd7ab4db5b1d3999b8c6b73a3759e324c2d493248ce759e747097b0395d109031ca6c4caa8a1e24b6c5e7bd559c7176d245fbd42a849f70098b60b12aa2ad41#npm:7.2.3", {
           "packageLocation": "./.yarn/$$virtual/ws-virtual-45de33831c/0/cache/ws-npm-7.2.3-e2147dfc25-fedf178c29.zip/node_modules/ws/",
           "packageDependencies": [
@@ -28139,6 +28140,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["safe-buffer", "npm:5.1.2"],
             ["ultron", "npm:1.1.1"],
             ["utf-8-validate", null]
+          ],
+          "packagePeers": [
+            "@types/bufferutil",
+            "@types/utf-8-validate",
+            "bufferutil",
+            "utf-8-validate"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:f1c4526f43dab534fa5779db7e4a2ec459eaef0b1e6cded1eb47b28a8c654fa94a2bf5d6b775a137e838439cc7316d5b2b244045eccdf3bf4d5a7525efa908d7#npm:7.4.6", {
+          "packageLocation": "./.yarn/$$virtual/ws-virtual-6690ed5f7e/0/cache/ws-npm-7.4.6-9c9a725604-ffeb626d92.zip/node_modules/ws/",
+          "packageDependencies": [
+            ["ws", "virtual:f1c4526f43dab534fa5779db7e4a2ec459eaef0b1e6cded1eb47b28a8c654fa94a2bf5d6b775a137e838439cc7316d5b2b244045eccdf3bf4d5a7525efa908d7#npm:7.4.6"],
+            ["@types/bufferutil", null],
+            ["@types/utf-8-validate", null],
+            ["bufferutil", "npm:4.0.3"],
+            ["utf-8-validate", "npm:5.0.5"]
           ],
           "packagePeers": [
             "@types/bufferutil",
