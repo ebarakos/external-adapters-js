@@ -33,7 +33,7 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
     get_aggregator_config: {},
   })
 
-  const result = decimalResult.toFixed(8).replace(".", "")
+  const result = decimalResult.toFixed(aggregatorConfig.decimals).replace('.', '')
 
   const wallet = terra.wallet(new MnemonicKey({ mnemonic: config.mnemonic }))
 
