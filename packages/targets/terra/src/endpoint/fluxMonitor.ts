@@ -33,14 +33,14 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
     get_aggregator_config: {},
   })
 
-  const result = decimalResult * 10 ** aggregatorConfig.decimals
+  const result = decimalResult.toFixed(8).replace(".", "")
 
   const wallet = terra.wallet(new MnemonicKey({ mnemonic: config.mnemonic }))
 
   const submitMsg: SubmitMsg = {
     submit: {
       round_id: roundId,
-      submission: result.toString(),
+      submission: result,
     },
   }
   const execMsg = new MsgExecuteContract(wallet.key.accAddress, address, submitMsg)
