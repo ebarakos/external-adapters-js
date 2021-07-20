@@ -31,6 +31,7 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
   try {
     const tx = await wallet.createAndSignTx({
       msgs: [execMsg],
+      gas: "300000"
     })
     const result = await terra.tx.broadcast(tx)
 

@@ -26,7 +26,6 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
     URL: config.fcdUrl,
     chainID: config.chainId,
     gasPrices: { uluna: config.gasPrices || DEFAULT_GAS_PRICES },
-    gasAdjustment: 2,
   })
 
   const aggregatorConfig = await terra.wasm.contractQuery<ConfigResponse>(address, {
@@ -48,6 +47,7 @@ export const execute: ExecuteWithConfig<Config> = async (request, config) => {
   try {
     const tx = await wallet.createAndSignTx({
       msgs: [execMsg],
+      gas: "300000"
     })
     const result = await terra.tx.broadcast(tx)
 
